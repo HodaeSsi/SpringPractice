@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'안녕하세요!!! ' + ${data}" >안녕하세요. 손님</p>
+<!-- HelloController의 data -->
+<!-- "안녕하세요. 손님"은 thymeleaf엔진을 거치지 않았을 때(순수html파일) 표시되는 부분 -->
+</body>
+</html>
+<!-- 페이지 자잘히 수정하고 싶은데 서버를 껐다가 다시 켜야되는 번거러움?
+    : build.gradle >> devtools 추가 & build탭에 recomplie '현재 파일' -->
+<!-- 그래도 spring 다시 올라오는데 ??? -->
