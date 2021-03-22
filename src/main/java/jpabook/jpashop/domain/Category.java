@@ -29,10 +29,17 @@ public class Category {
     //실무에선 다대다 쓰지마~
     private List<Item> items = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 
     @OneToMany(mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
+
+    //==연관관계 메서드==//
+    public void addChildCategory(Category child) {
+        this.child.add(child);
+        child.setParent(this);
+        //근디 애초에 카테고리를 왜 자식-부모 관계로 한거지??? (다대다 연관관계 구현을 위해?)
+    }
 }
