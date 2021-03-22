@@ -1,6 +1,7 @@
-package jpabook.jpashop.domain.repository;
+package jpabook.jpashop.repository;
 
 import jpabook.jpashop.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -8,9 +9,9 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class MemberReposoitory {
+@RequiredArgsConstructor //em관련 생성자 생성 : springBoot(spring data jpa) 지원 기능
+public class MemberRepository {
 
-    @PersistenceContext
     private EntityManager em;
 
     public void save(Member member) {
