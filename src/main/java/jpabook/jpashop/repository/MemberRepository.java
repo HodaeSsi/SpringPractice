@@ -9,9 +9,11 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-@RequiredArgsConstructor //em관련 생성자 생성 : springBoot(spring data jpa) 지원 기능
+//@RequiredArgsConstructor //em관련 생성자 생성 : springBoot(spring data jpa) 지원 기능
+//야 em NULL 뜨는데?(Required~가 스프링 데이터 jpa 기능이라던데 그게 임포트가 안됐나???
 public class MemberRepository {
 
+    @PersistenceContext
     private EntityManager em;
 
     public void save(Member member) {

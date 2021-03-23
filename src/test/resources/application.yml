@@ -1,0 +1,24 @@
+spring:
+#  datasource:
+#    url: jdbc:h2:mem:test
+#    #h2데이터베이스를 메모리DB로서(로써?) 활용하겠다.
+#    #확인? >> DB서버를 끄면 main운용환경과 브라우저 h2콘솔은 접근이 안되는데, 테스트는 작동함
+#    #& 결과창에서 p6spy(얘 뭐하는 앤데?)가 가져오는 DB url을 보면 또한 확인할 수 있다.
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#
+#  jpa:
+#    generate-dll: true
+#    hibernate:
+#      ddl-auto: create #validate #스프링부트에서 설정하는 디폴트값은 create-drop(create는 drop-create라 생각하면 됨)
+#    properties:
+#      hibernate:
+#        show_sql: true #콘솔 출력으로 결과를 확인하게 된다.
+#        format_sql: true
+# >> spring'boot'가 별도의 설정이 없으면 기본으로 메모리DB로 돌려준다.
+# >> 테스트 환경에서만??? >> 아닐듯? 지금 test/resources/application.yml 파일이 존재하니까 테스트에서만 메모리DB를 돌려준듯?
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace

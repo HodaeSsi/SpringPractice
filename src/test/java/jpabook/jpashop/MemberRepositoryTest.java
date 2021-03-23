@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MemberRepositoryTest {
+public class MemberRepositoryTest {/*
 
     @Autowired
     MemberRepository memberRepository;
@@ -38,5 +38,5 @@ public class MemberRepositoryTest {
         Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
 //        Assertions.assertThat(findMember).isEqualTo(member);
 // >> 결과 true, 한 트랜잭션 안에서일어나는 비교(저장, 조회)라 같은 영속성 컨텍스트, 같은 식별자, 같은 엔터티(JPA)
-    }
+    }*/
 }

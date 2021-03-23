@@ -8,7 +8,7 @@ spring:
   jpa:
     generate-dll: true
     hibernate:
-      ddl-auto: validate #create
+      ddl-auto: create #validate
     properties:
       hibernate:
 #        show_sql: true #콘솔 출력으로 결과를 확인하게 된다.
