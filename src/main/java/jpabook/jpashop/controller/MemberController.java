@@ -56,7 +56,7 @@ public class MemberController {
         //***화면에서 받거나, 화면에 뿌리는 정보는 항상 DTO나 Form을 이용하라.(Entity직접 사용X)
         //특히 API 제작시에는 더더욱 Entity를 노출시키면 안된다.
         model.addAttribute("members", members);
-        return "members/memberList.html";
+        return "members/memberList";
         //usage맵핑(?) 한 번 놓치니까 인텔리j 이악물고 안찾아주네;;;
     }
 }

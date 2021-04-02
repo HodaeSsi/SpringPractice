@@ -38,6 +38,8 @@ public class OrderItem {
 
     //==생성 메서드==//
     public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
+        //item에 price가 있잖아요? 왜 orderPrice 따로?
+        //>> 할인 등의 변동사항 반영을 위한 처리
         OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
         orderItem.setOrderPrice(orderPrice);
@@ -53,7 +55,6 @@ public class OrderItem {
     }
 
     //==조회 로직==//
-
     /**
      * 주문상품 전체 가격 조회
      */

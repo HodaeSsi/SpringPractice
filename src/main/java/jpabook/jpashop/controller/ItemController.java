@@ -65,9 +65,11 @@ public class ItemController {
     }
 
     @PostMapping("items/{itemId}/edit")
-    public String updateItem(@PathVariable String itemId, @ModelAttribute("form") BookForm form) {
+//    public String updateItem(@PathVariable String itemId, @ModelAttribute("form") BookForm form) {
+    public String updateItem(@PathVariable Long itemId, @ModelAttribute("form") BookForm form) {
         //@ModelAttribute???
 
+        /*
         Book book = new Book();
         book.setId(form.getId());
         //+(보안) url의 id 노출로 인해 무단 수정등의 취약점 발생 >> '변경 권한 확인'같은 추가적인 validation이 필요
@@ -78,6 +80,11 @@ public class ItemController {
         book.setIsbn(form.getIsbn());
 
         itemService.saveItem(book);
+         */
+        //"어설프게 컨트롤러에서 엔티티 생성하지 마라"
+        //>>
+        itemService.updateItem(itemId, form.getName(), form.getPrice(), form.getStockQuantity());
+
         return "redirect:/items";
     }
 }

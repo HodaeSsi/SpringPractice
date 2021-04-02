@@ -32,7 +32,7 @@ public class Order {
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
     //CascadeType.ALL?
-    //persist(delivery); persist(order); 과정을, persist(order)로 줄일 수 있다.
+    //>> persist(delivery); persist(order); 과정을, persist(order)로 줄일 수 있다.
     //"order가 persist될 때 delivery에 저장된 값 또한 자동으로 persist해줌"
 
     private LocalDateTime orderDate; //주문시간
@@ -40,9 +40,9 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status; //주문 상태 [ORDER, CANCEL]
 
-    //==연관관계 메서드==// (Only 양방향 관계에서?)
+    //==연관관계 메서드==//
     //연관관계 메서드는 주 컨트롤 하는 쪽(?)에 두는것이 좋다.
-    //이거 이점이 뭐라고??? 무슨 코드를 줄여준다던데(강의확인)
+    //"하나 만들때, 다른 하나도 넣어버려"
     public void setMember(Member member) {
         this.member = member;
         member.getOrders().add(this);
@@ -59,7 +59,7 @@ public class Order {
     }
 
     //==생성 메서드==/
-    public static Order createOrder(Member member, Delivery delivery, OrderItem... oderItems) {//...뭐임???
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... oderItems) {
         Order order = new Order();
         order.setMember(member);
         order.setDelivery(delivery);
